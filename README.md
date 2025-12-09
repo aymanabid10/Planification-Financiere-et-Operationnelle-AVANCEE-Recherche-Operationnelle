@@ -2,6 +2,58 @@
 
 Ce modèle optimise la production, l'approvisionnement, la gestion des stocks, et les décisions d'investissement en capacité sur un horizon temporel $T$ périodes, en minimisant le coût total actualisé.
 
+Pour exécuter, vous devez suivre trois étapes principales dans votre environnement de développement : créer un environnement virtuel Python (`venv`), installer les dépendances nécessaires à partir de `requirements.txt` et lancer le fichier principal.
+
+## 1\. Créer et Activer l'Environnement Virtuel (`venv`)
+
+L'environnement virtuel isole les dépendances de votre projet du reste de votre système.
+
+1.  **Créer le Venv :** Dans le répertoire racine de votre projet, exécutez la commande suivante. Cela créera un dossier nommé `venv` (ou un autre nom si spécifié) contenant l'environnement isolé.
+
+    ```bash
+    python3 -m venv venv
+    ```
+
+2.  **Activer le Venv :**
+
+      * **Sous Windows (PowerShell/CMD) :**
+        ```bash
+        .\venv\Scripts\activate
+        ```
+      * **Sous macOS/Linux (Bash/Zsh) :**
+        ```bash
+        source venv/bin/activate
+        ```
+
+    Votre ligne de commande devrait maintenant être précédée de `(venv)`, indiquant que l'environnement est actif.
+
+-----
+
+## 2\. Installer les Dépendances (`requirements.txt`)
+
+Une fois l'environnement virtuel actif, utilisez le fichier `requirements.txt` pour installer toutes les bibliothèques requises (PyQt5, pandas, gurobipy, etc.).
+
+  * **Installer les dépendances :**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *(**Note :** Assurez-vous d'avoir installé le solveur **Gurobi** séparément et configuré votre licence avant cette étape, car `gurobipy` est une dépendance critique).*
+
+-----
+
+## 3\.  Lancer l'Application
+
+Le point d'entrée de votre application est le fichier `main.py`.
+
+  * **Exécuter l'application :**
+    ```bash
+    python main.py
+    ```
+
+L'interface graphique (GUI) de votre outil d'optimisation PyQt5 devrait s'ouvrir, prête à charger les données et à lancer la résolution Gurobi.
+
+---- 
+# La modèlisation de la problèmatique
 ## 1. Indices et Paramètres
 
 | Symbole | Description | Unité |
